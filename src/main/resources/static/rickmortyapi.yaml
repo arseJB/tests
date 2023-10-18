@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Rick and Morty API
+  version: 1.0.0
+paths:
+  /search-character-appearance:
+    get:
+      summary: Search character information by name
+      parameters:
+        - name: name
+          in: query
+          description: Character's name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success. Returns character information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterAppearance'
+        '400':
+          description: Bad request. Character name is required.
+        '404':
+          description: No results found for the specified name.
+components:
+  schemas:
+    CharacterAppearance:
+      title: CharacterAppearance
+      x-stoplight:
+        id: giyp3lv10dvs6
+      type: object
+      properties:
+        name:
+          type: string
+        episodes:
+          type: array
+          items:
+            type: string
+        first_appearance:
+          type: string
