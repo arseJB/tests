@@ -34,10 +34,11 @@ docker run -p 8081:8081 rmclient
 
 Test will be executed during the "clean install" command launched during the docker build phase.
 
-- EXECUTION
   
-In order to execute the client: 
+In order to try the project: 
+
 Open Postman or Chrome and execute:
+
 ```
 http://localhost:8081/search-character-appearance?name=morty
 ```
